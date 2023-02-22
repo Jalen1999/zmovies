@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="theme-color" content="#31353B">
+    <meta name="msapplication-navbutton-color" content="#31353B">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#31353B">   
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <meta property="og:image" content="https://image.tmdb.org/t/p/original/36uOFptJ8jlWCGidEAkxErFxY4K.jpg">
+    <meta name="description" content="A young couple's romance is cut short when the man learns that his woman is married. Meanwhile, an unhappily married husband meets a lonely teacher and they share an illicit affair.">
+    <title>KJAYDev | La Querida 2023-02-10</title>
+    <style type="text/css">
+        body, html {
+            width: 100%; height: 100%; margin: 0; padding: 0
+        }
+        .row-container {
+             display: flex; width: 100%; height: 100%; flex-direction: column; background-color: black; overflow: hidden;
+        }
+     </style>
+  </head>
+  <body>
+    <div class="row-container">
+      <iframe id="iframe" src="https://dood.yt/e/o2bmlb3gry8970a3zo55zh36wcrchcc3?c_poster=https://image.tmdb.org/t/p/original/36uOFptJ8jlWCGidEAkxErFxY4K.jpg" width="100%" height="100%" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </div>
+  </body>
+</html>		

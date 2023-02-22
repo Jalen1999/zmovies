@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="theme-color" content="#31353B">
+    <meta name="msapplication-navbutton-color" content="#31353B">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#31353B">   
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <meta property="og:image" content="https://image.tmdb.org/t/p/original/nymdIREJw2omTiOZPMv3oqzexhO.jpg">
+    <meta name="description" content="The married life of Sabel and Brian was cut short when three men rape her and kill Brian in their honeymoon. Surviving from the crime, she vows to let the culprits experience hell.">
+    <title>KJAYDev | Bata pa si Sabel 2022-12-02</title>
+    <style type="text/css">
+        body, html {
+            width: 100%; height: 100%; margin: 0; padding: 0
+        }
+        .row-container {
+             display: flex; width: 100%; height: 100%; flex-direction: column; background-color: black; overflow: hidden;
+        }
+     </style>
+  </head>
+  <body>
+    <div class="row-container">
+      <iframe id="iframe" src="https://dood.re/e/2v2umk9zf4kgupv4dqwommscpp9qz6gl?c_poster=https://image.tmdb.org/t/p/original/nymdIREJw2omTiOZPMv3oqzexhO.jpg" width="100%" height="100%" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </div>
+  </body>
+</html>		

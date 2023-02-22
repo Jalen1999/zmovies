@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="theme-color" content="#31353B">
+    <meta name="msapplication-navbutton-color" content="#31353B">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#31353B">   
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <meta property="og:image" content="https://image.tmdb.org/t/p/original/oE5bdUB4QBTX2g1Q0eUygxkvghN.jpg">
+    <meta name="description" content="A young couple's shaky marriage becomes more chaotic when an other woman comes into the picture. But what happens when the two women fall in love with each other?">
+    <title>KJAYDev | Us X Her 2022-11-25</title>
+    <style type="text/css">
+        body, html {
+            width: 100%; height: 100%; margin: 0; padding: 0
+        }
+        .row-container {
+             display: flex; width: 100%; height: 100%; flex-direction: column; background-color: black; overflow: hidden;
+        }
+     </style>
+  </head>
+  <body>
+    <div class="row-container">
+      <iframe id="iframe" src="https://dood.re/e/ilgct4oxoqu36x8ijlzzctsheyv3wjnq?c_poster=https://image.tmdb.org/t/p/original/oE5bdUB4QBTX2g1Q0eUygxkvghN.jpg" width="100%" height="100%" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </div>
+  </body>
+</html>		
