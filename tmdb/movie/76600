@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="theme-color" content="#31353B">
+    <meta name="msapplication-navbutton-color" content="#31353B">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#31353B">   
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <meta property="og:image" content="https://image.tmdb.org/t/p/original/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg">
+    <meta name="description" content="Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.">
+    <title>KJAYDev | Avatar: The Way of Water 2022-12-14</title>
+    <style type="text/css">
+        body, html {
+            width: 100%; height: 100%; margin: 0; padding: 0
+        }
+        .row-container {
+             display: flex; width: 100%; height: 100%; flex-direction: column; background-color: black; overflow: hidden;
+        }
+     </style>
+  </head>
+  <body>
+    <div class="row-container">
+      <iframe id="iframe" src="https://dood.re/e/532p95rc18af?c_poster=https://image.tmdb.org/t/p/original/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg" width="100%" height="100%" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </div>
+  </body>
+</html>		
