@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8" /> 
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="msapplication-navbutton-color" content="#FFFFFF">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <meta property="og:image" content="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png">
+    <meta name="description" content="ZMovies Philippines main API, enjoy!">
+<style>
+    body, html {
+        background-color: black; /* Black background */
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #sourceSelect {
+        width: auto;
+        background-color: black; /* Black background */
+        color: white; /* Text alb */
+        padding: 10px 20px; /* Adjust button width */
+        position: absolute;
+        top: 10px; /* Position the button higher to be visible */
+        left: 10px; /* Position the button further left to be visible */
+        z-index: 1;
+    }
+
+    #embeddedPlayer {
+        width: 100%;
+        height: 100%;
+    }
+    
+    select {
+        width: 100%;
+    }
+
+    .player {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background-color: black;
+        overflow: hidden;
+        position: relative;
+    }
+</style>
+</head>
+<body>
+    <div class="player">
+        <select id="sourceSelect"></select>
+        <iframe id="embeddedPlayer" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <script>
+      var playerSources = [
+        "https://vidsrc.to/embed/movie/ID",
+        "https://2embed.org/2embedpre2.php/player.php?id=ID",
+        "https://2embed.org/2embed.php/player.php?id=ID",
+        "https://vidsrc.me/embed/ID",
+        "https://moviesapi.club/movie/ID",
+        "https://2embed.org/1movie2.php/player.php?id=ID",
+        "https://multiembed.mov/directstream.php?video_id=ID&tmdb=1",
+        "https://2embed.org/gomo2.php/player.php?id=ID",
+        "https://autoembed.to/movie/tmdb/ID",
+        "https://frembed.com/api/film.php?id=ID",
+        "https://embed.smashystream.com/playere.php?tmdb=ID",
+        "https://xtreamhub.com/video/ID",
+        "https://vivamax.asia/embed/movie?tmdb=ID",
+        "https://zmovies-api.kjaydev.xyz/tmdb/movie/ID",
+        // Add other sources here
+    ];
+    var customTexts = [
+        "Server 1",
+        "Server 2",
+        "Server 3",
+        "Server 4",
+        "Server 5",
+        "Server 6",
+        "Server 7",
+        "Server 8",
+        "Server 9",
+        "Server 10",
+        "Server 11",
+        "Server 12 (PH)",
+        "Server 13 (PH)",
+        "Server 14 (PH)",
+        // Add the custom texts corresponding to the sources here
+    ];
+
+    var customWarnings = [
+        "Warning: Server is down",
+        "Warning: Server is down",
+        "Warning: Server is down",
+        "Warning: Server is down",
+        "Warning: Server is down",
+        "Warning: Server is down",
+        "Warning: Server is down",
+        "Warning: Server is down",
+        // Add custom warnings corresponding to sources here
+    ];
+
+    function generatePlayer(id) {
+        var sourceSelect = document.getElementById("sourceSelect");
+        var embeddedPlayer = document.getElementById("embeddedPlayer");
+
+        sourceSelect.innerHTML = ''; // Reset previous options
+        
+        for (var i = 0; i < playerSources.length; i++) {
+            var option = document.createElement("option");
+            option.value = playerSources[i].replace("ID", id);
+            option.text = customTexts[i]; // Display the custom text
+            sourceSelect.appendChild(option);
+
+            // Add the "Caution" warning next to the source
+            var warning = document.createElement("span");
+            warning.textContent = customWarnings[i];
+            sourceSelect.appendChild(warning);
+        }
+
+        embeddedPlayer.src = sourceSelect.value; // Set the initial source
+
+        sourceSelect.addEventListener("change", function() {
+            embeddedPlayer.src = sourceSelect.value;
+        });
+    }
+
+    // Get the ID from the URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var idFromUrl = urlParams.get("id");
+
+    if (idFromUrl) {
+        generatePlayer(idFromUrl);
+    }
+</script>
+</body>
+</html>
