@@ -11,7 +11,7 @@
     <title>KJAYDev | ZMovies API</title>
     <style>
     body, html {
-        background-color: rgb(32, 32, 32); 
+        background-color: rgb(32, 32, 32);
         margin: 0;
         padding: 0;
         width: 100%;
@@ -36,7 +36,7 @@
         width: 100%;
         height: 100%;
     }
-    
+
     select {
         width: 100%;
     }
@@ -59,11 +59,12 @@
 </div>
 <script>
       var playerSources = [
-        "https://vidsrc.to/embed/movie/ID",
-        "https://vidsrc.me/embed/movie?tmdb=ID",
-        "https://moviesapi.club/movie/ID",
-        "https://multiembed.mov/directstream.php?video_id=ID&tmdb=1",
-        "https://embed.smashystream.com/playere.php?tmdb=ID"
+        "https://vidsrc.to/embed/movie/MOVIE_ID",
+        "https://vidsrc.me/embed/movie?tmdb=MOVIE_ID",
+        "https://moviesapi.club/movie/MOVIE_ID",
+        "https://multiembed.mov/directstream.php?video_id=MOVIE_ID&tmdb=1",
+        "https://embed.smashystream.com/playere.php?tmdb=MOVIE_ID",
+        "https://www.2embed.cc/embed/MOVIE_ID"
         // Add other sources here
     ];
     var customTexts = [
@@ -89,10 +90,10 @@
         var embeddedPlayer = document.getElementById("embeddedPlayer");
 
         sourceSelect.innerHTML = ''; // Reset previous options
-        
+
         for (var i = 0; i < playerSources.length; i++) {
             var option = document.createElement("option");
-            option.value = playerSources[i].replace("ID", id);
+            option.value = playerSources[i].replace("MOVIE_ID", id);
             option.text = customTexts[i]; // Display the custom text
             sourceSelect.appendChild(option);
 
