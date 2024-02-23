@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8" />
+    <head>
+    <meta charset="UTF-8" /> 
     <meta name="theme-color" content="#2C2E31cc">
     <meta name="msapplication-navbutton-color" content="#2C2E31cc">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#2C2E31cc">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#2C2E31cc">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
     <meta property="og:image" content="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png">
     <meta name="description" content="ZMovies Philippines main API">
     <title>KJAYDev | ZMovies API</title>
-    <style>
+<style>
     body, html {
-        background-color: rgb(32, 32, 32);
+        background-color: rgb(32, 32, 32); 
         margin: 0;
         padding: 0;
         width: 100%;
@@ -36,7 +36,7 @@
         width: 100%;
         height: 100%;
     }
-
+    
     select {
         width: 100%;
     }
@@ -53,18 +53,18 @@
 </style>
 </head>
 <body>
-<div class="player">
-    <select id="sourceSelect"></select>
-    <iframe id="embeddedPlayer" frameborder="0" allowfullscreen></iframe>
-</div>
-<script>
-      var playerSources = [
-        "https://vidsrc.to/embed/movie/MOVIE_ID",
-        "https://vidsrc.me/embed/movie?tmdb=MOVIE_ID",
-        "https://moviesapi.club/movie/MOVIE_ID",
-        "https://multiembed.mov/directstream.php?video_id=MOVIE_ID&tmdb=1",
-        "https://embed.smashystream.com/playere.php?tmdb=MOVIE_ID",
-        "https://www.2embed.cc/embed/MOVIE_ID"
+    <div class="player">
+        <select id="sourceSelect"></select>
+        <iframe id="embeddedPlayer" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <script>
+    var playerSources = [
+        "https://vidsrc.to/embed/movie/{ID}",
+        "https://vidsrc.me/embed/movie?tmdb={ID}",
+        "https://moviesapi.club/movie/{ID}",
+        "https://multiembed.mov/directstream.php?video_id={ID}&tmdb=1",
+        "https://embed.smashystream.com/playere.php?tmdb={ID}",
+        "https://www.2embed.cc/embed/{ID}"
         // Add other sources here
     ];
     var customTexts = [
@@ -87,15 +87,15 @@
         // Add custom warnings corresponding to sources here
     ];
 
-    function generatePlayer(id) {
+    function generatePlayerMovies(id) {
         var sourceSelect = document.getElementById("sourceSelect");
         var embeddedPlayer = document.getElementById("embeddedPlayer");
 
         sourceSelect.innerHTML = ''; // Reset previous options
-
+        
         for (var i = 0; i < playerSources.length; i++) {
             var option = document.createElement("option");
-            option.value = playerSources[i].replace("MOVIE_ID", id);
+            option.value = playerSources[i].replace("{ID}", id);
             option.text = customTexts[i]; // Display the custom text
             sourceSelect.appendChild(option);
 
@@ -112,12 +112,63 @@
         });
     }
 
+
+    var playerSourcesTvShows = [
+        "https://vidsrc.to/embed/tv/{ID}/{S}/{E}",
+        "https://vidsrc.me/embed/tv?tmdb={ID}&season={S}&episode={E}",
+        "https://moviesapi.club/tv/{ID}-{S}-{E}",
+        "https://multiembed.mov/directstream.php?video_id={ID}&tmdb=1&s={S}&e={E}",
+        "https://player.smashy.stream/tv/{ID}?s={S}&e={E}",
+        "https://www.2embed.cc/embedtv/{ID}&s={S}&e={E}"
+        // Add other sources here
+    ];
+    var serverCountTvShows = [
+        "Server 1",
+        "Server 2",
+        "Server 3",
+        "Server 4",
+        "Server 5",
+        "Server 6"
+        // Add the custom texts corresponding to the sources here
+    ];
+    var customWarningsTvShows = [
+        "Warning: Server 1 is down",
+        "Warning: Server 2 is down",
+        "Warning: Server 3 is down",
+        "Warning: Server 4 is down",
+        "Warning: Server 5 is down",
+        "Warning: Server 6 is down"
+        // Add custom warnings corresponding to sources here
+    ];
+    function generatePlayerTvShows(id, season, episode) {
+        var sourceSelect = document.getElementById("sourceSelect");
+        var embeddedPlayer = document.getElementById("embeddedPlayer");
+        sourceSelect.innerHTML = ''; // Reset previous options
+        for (var i = 0; i < playerSourcesTvShows.length; i++) {
+            var option = document.createElement("option");
+            option.value = playerSourcesTvShows[i].replace("{ID}", id).replace("{S}", season).replace("{E}", episode);
+            option.text = serverCountTvShows[i]; // Display the custom text
+            sourceSelect.appendChild(option);
+            // Add the "Caution" warning next to the source
+            var warning = document.createElement("span");
+            warning.textContent = customWarningsTvShows[i];
+            sourceSelect.appendChild(warning);
+        }
+        embeddedPlayer.src = sourceSelect.value; // Set the initial source
+        sourceSelect.addEventListener("change", function() {
+            embeddedPlayer.src = sourceSelect.value;
+        });
+    }
+
     // Get the ID from the URL
     var urlParams = new URLSearchParams(window.location.search);
     var idFromUrl = urlParams.get("id");
-
-    if (idFromUrl) {
-        generatePlayer(idFromUrl);
+    var season = urlParams.get("season");
+    var episode = urlParams.get("episode");
+    if (season && episode) {
+        generatePlayerTvShows(idFromUrl, season, episode);
+    } else {
+        generatePlayerMovies(idFromUrl);
     }
 </script>
 <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
