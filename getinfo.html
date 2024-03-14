@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ZMovies Youtube Player API</title>
+    <style type="text/css">
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0
+        }
+    </style>
+</head>
+
+<body>
+    <div id="player"></div>
+    <script>
+        var urlParams = new URLSearchParams(window.location.search);
+        var video_id = urlParams.get("videoid");
+        if (video_id) {
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            var player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player(undefined, {
+                    height: '0',
+                    width: '0',
+                    videoId: video_id,
+                    playerVars: {
+                        'autoplay': 0,
+                        'controls': 0
+                    },
+                    events: {
+                        'onReady': onPlayerReady
+                    }
+                });
+            }
+            function onPlayerReady(event) {
+                event.target.mute();
+                v_time = player.getDuration();
+                v_title = player.getVideoData().title
+                let jsonData = {
+                    "title": v_title,
+                    "duration": v_time
+                };
+                let child = window.open("/get_duration.html?videoid=" + video_id, "_self");
+                var stringify = JSON.stringify(jsonData, undefined, 4)
+                child.document.write("<pre>"+stringify+"</pre>");
+                child.document.close();
+            }
+        }
+    </script>
+</body>
+</html>
