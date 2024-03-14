@@ -47,7 +47,7 @@
                     "title": v_title,
                     "duration": v_time
                 };
-                let child = window.open("/get_duration.html?videoid=" + video_id, "_self");
+                let child = window.open("/getinfo.html?videoid=" + video_id, "_self");
                 var stringify = JSON.stringify(jsonData, undefined, 4)
                 child.document.write("<pre>"+stringify+"</pre>");
                 child.document.close();
