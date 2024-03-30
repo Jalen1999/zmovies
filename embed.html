@@ -59,7 +59,6 @@
 </div>
 <script>
     var playerSources = [
-        "https://mw.lonelil.ru/media/tmdb-movie-{ID}",
         "https://vidsrc.to/embed/movie/{ID}",
         "https://vidsrc.me/embed/movie?tmdb={ID}",
         "https://moviesapi.club/movie/{ID}",
@@ -74,9 +73,8 @@
         "Server 3",
         "Server 4",
         "Server 5",
-        "Server 6",
-        "Server 7"
-        // Add the custom texts corresponding to the sources here
+        "Server 6"
+            // Add the custom texts corresponding to the sources here
     ];
 
     var customWarnings = [
@@ -85,8 +83,7 @@
         "Warning: Server 3 is down",
         "Warning: Server 4 is down",
         "Warning: Server 5 is down",
-        "Warning: Server 6 is down",
-        "Warning: Server 7 is down"
+        "Warning: Server 6 is down"
         // Add custom warnings corresponding to sources here
     ];
 
@@ -117,7 +114,6 @@
 
 
     var playerSourcesTvShows = [
-        "https://mw.lonelil.ru/media/tmdb-tv-{ID}/{S}/{E}",
         "https://vidsrc.to/embed/tv/{ID}/{S}/{E}",
         "https://vidsrc.me/embed/tv?tmdb={ID}&season={S}&episode={E}",
         "https://moviesapi.club/tv/{ID}-{S}-{E}",
@@ -132,8 +128,7 @@
         "Server 3",
         "Server 4",
         "Server 5",
-        "Server 6",
-        "Server 7"
+        "Server 6"
         // Add the custom texts corresponding to the sources here
     ];
     var customWarningsTvShows = [
@@ -142,8 +137,7 @@
         "Warning: Server 3 is down",
         "Warning: Server 4 is down",
         "Warning: Server 5 is down",
-        "Warning: Server 6 is down",
-        "Warning: Server 7 is down",
+        "Warning: Server 6 is down"
         // Add custom warnings corresponding to sources here
     ];
     function generatePlayerTvShows(id, season, episode) {
