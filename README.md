@@ -10,24 +10,38 @@ Email: <a href="mailto:jakelenjalen@gmail.com">jakelenjalen@gmail.com</a>
 Request For Movie
 -------------
 
-TMDB ONLY
+<strong>TMDB ONLY</strong>
 
-<a href="https://zmovies-api.kjaydev.xyz/tmdb/movie/1205036">https://zmovies-api.kjaydev.xyz/tmdb/movie/1205036</a>
+Embed Link
 ```
 
 https://zmovies-api.kjaydev.xyz/tmdb/movie/{MOVIE_ID}
 
 ```
 
+Embed Code
+```
+
+<iframe width="100%" height="100%" src="https://zmovies-api.kjaydev.xyz/tmdb/movie/1205036" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+
+```
+
 Request For TV Show
 -------------
 
-TMDB ONLY
+<strong>TMDB ONLY</strong>
 
-<a href="https://zmovies-api.kjaydev.xyz/tmdb/tv/236746s1e1">https://zmovies-api.kjaydev.xyz/tmdb/tv/236746s1e1</a>
+Embed Link
 ```
 
 https://zmovies-api.kjaydev.xyz/tmdb/tv/{TVSHOW_ID}s{SEASON_NUMBER}e{EPISODE_NUMBER}
+
+```
+
+Embed Code
+```
+
+<iframe width="100%" height="100%" src="https://zmovies-api.kjaydev.xyz/tmdb/tv/234785s1e1" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
 
 ```
 
