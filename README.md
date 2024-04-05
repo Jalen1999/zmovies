@@ -1,4 +1,5 @@
-<img src="https://jakelen61732.github.io/jakelen61732/zmovies/assets/images/zmovies_icon.webp" alt="ZMovies logo" width="220" height="220">
+[<img src="https://jakelen61732.github.io/jakelen61732/zmovies/assets/images/zmovies_icon.webp" alt="Get it on Google Play" height="220">](https://play.google.com/store/apps/details?id=com.kjaydev.zmovies1)
+
 
 ZMovies Philippines Official API
 ================
@@ -45,6 +46,11 @@ Embed Code
 
 ```
 
+## Download
+
+[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="75">](https://play.google.com/store/apps/details?id=com.kjaydev.zmovies1)
+
+
 Please Donate to support me and my work!
 -------------
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](mailto:jakelenjalen@gmail.com)
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.paypal.me/jakelen172)
