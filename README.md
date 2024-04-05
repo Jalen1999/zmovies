@@ -47,4 +47,4 @@ Embed Code
 
 Please Donate to support me and my work!
 -------------
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://google.com)
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](mailto:jakelenjalen@gmail.com)
