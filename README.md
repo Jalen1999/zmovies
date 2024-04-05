@@ -31,6 +31,6 @@ https://zmovies-api.kjaydev.xyz/tmdb/tv/{TVSHOW_ID}s{SEASON_NUMBER}e{EPISODE_NUM
 
 ```
 
-You Can Donate Me Guys to Maintain This Up-to-date
+Please Donate to support me and my work!
 -------------
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://google.com)
