@@ -1,8 +1,9 @@
-[<img src="https://jakelen61732.github.io/jakelen61732/zmovies/assets/images/zmovies_icon.webp" alt="Get it on Google Play" height="220">](https://play.google.com/store/apps/details?id=com.kjaydev.zmovies1)
+<div align="center">
+    <img src="https://jakelen61732.github.io/jakelen61732/zmovies/assets/images/zmovies_icon.webp" width="128" height="128" style="display: block; margin: 0 auto"/>
+    <h1>ZMovies Philippines Official API</h1>
+</div>
 
-
-ZMovies Philippines Official API
-================
+---
 
 Please inbox me if you have any questions or request.
 
