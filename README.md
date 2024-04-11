@@ -1,7 +1,7 @@
 <div align="center">
     <img src="https://jakelen61732.github.io/jakelen61732/zmovies/assets/images/zmovies_icon.webp" width="128" height="128" style="display: block; margin: 0 auto"/>
     <h1>ZMovies Philippines</h1>
-    <p>ZMovies Philippines Official API</p>
+    <p>Official API For Pinoy Movies</p>
 </div>
 
 ---
