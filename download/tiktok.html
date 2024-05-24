@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#31353B">
+    <meta name="msapplication-navbutton-color" content="#31353B">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#31353B">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta property="og:image" content="https://jakelen61732.github.io/jakelen61732/zmovies/assets/images/ic_splash.png">
+    <meta name="description" content="ZMovies Philippines🇵🇭🎬">
+    <meta name="keywords" content="ZMovies Philippines🇵🇭🎬">
+    <title>ZMovies Philippines 🇵🇭</title>
+    <link rel="icon" href="https://jakelen61732.github.io/jakelen61732/zmovies/assets/images/favicon.png"
+        type="image/x-icon">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .container {
+            margin: auto;
+            width: 100%;
+            padding: 0;
+            text-align: center;
+        }
+
+        .btn {
+            background-color: rgb(0, 65, 11);
+            border: none;
+            color: white;
+            padding: 10px 40px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 1rem;
+            line-height: 2.25rem;
+            transition-duration: 0.4s;
+        }
+
+        .btn:hover {
+            background-color: RoyalBlue;
+        }
+
+        img {
+            border-radius: 50%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: auto;
+        }
+
+        h1,
+        p {
+            color: white;
+        }
+
+        .bottom-div {
+            position: fixed;
+            width: 100%;
+            bottom: 10px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <img src="https://jakelen61732.github.io/jakelen61732/zmovies/assets/images/zmovies_icon.webp" alt="Zmovies"
+            width="200" height="200">
+
+        <h1>ZMovies Philippines</h1>
+        <h3>⬇️ Download the app below ⬇️</h3>
+        <br><br>
+        <button class="btn" onclick="download('https://zmovies-api.kjaydev.xyz/download/ZMovies.apk');">
+            <i class="fa fa-download"></i>Download</button>
+        <div class="bottom-div">
+            <p>
+                <a href="https://web.facebook.com/KJAYDevelopers">© 2024 KJAYDev</a> • 
+                <a href="https://www.freeprivacypolicy.com/live/5f11da8f-c303-407c-a163-748adc82fbfc">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+</body>
+<script>
+    function download(url) {
+        window.location.href = url;
+    }
+</script>
+
+</html>
