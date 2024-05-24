@@ -1,93 +1,163 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="color-scheme" content="dark">
-    <meta name="theme-color" content="#31353B">
-    <meta name="msapplication-navbutton-color" content="#31353B">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#31353B">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <meta property="og:image" content="https://jakelen61732.github.io/jakelen61732/zmovies/assets/images/ic_splash.png">
-    <meta name="description" content="ZMovies Philippines🇵🇭🎬">
-    <meta name="keywords" content="ZMovies Philippines🇵🇭🎬">
-    <title>ZMovies Philippines 🇵🇭</title>
-    <link rel="icon" href="https://jakelen61732.github.io/jakelen61732/zmovies/assets/images/favicon.png"
-        type="image/x-icon">
-    <!-- Add icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Download the ZMovies</title>
+    <link rel="stylesheet" href="swiper.css">
     <style>
-    
-        .container {
-            margin: auto;
-            width: 100%;
+        html,
+        body {
+            height: 100%;
+            margin: 0;
             padding: 0;
-            text-align: center;
+            list-style: none;
+            text-decoration: none;
+            overflow-x: hidden;
+            /*Disable left and right sliding*/
         }
 
-        .btn {
-            background-color: rgb(0, 65, 11);
-            border: none;
-            color: white;
-            padding: 10px 40px;
-            text-align: center;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 1rem;
-            line-height: 2.25rem;
-            transition-duration: 0.4s;
-        }
-
-        .btn:hover {
-            background-color: RoyalBlue;
-        }
-
-        img {
-            border-radius: 50%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: auto;
-        }
-
-        h1,
-        p {
-            color: white;
-        }
-
-        .bottom-div {
-            position: fixed;
+        .container {
             width: 100%;
-            bottom: 10px;
-            text-align: center;
+        }
+
+        .container img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container .top {
+            height: 20%;
+        }
+
+        .container .middle {
+            height: 30%;
+        }
+
+        .container .bottom {
+            height: 50%;
         }
     </style>
 </head>
 
-<body>
+<body class="download">
     <div class="container">
-
-        <img src="https://jakelen61732.github.io/jakelen61732/zmovies/assets/images/zmovies_icon.webp" alt="Zmovies"
-            width="200" height="200">
-
-        <h1>ZMovies Philippines</h1>
-        <h3>⬇️ Download the app below ⬇️</h3>
-
-        <h3 style="color: #008000;">Google Play Store</h3>
-        <button class="btn" onclick="download('https://play.google.com/store/apps/details?id=com.kjaydev.zmovies1');">
-            <i class="fa fa-download"></i>Download</button>
-        <h3 style="color: #FF0000;">None Google Play Store</h3>
-        <button class="btn" onclick="download('https://jakelen61732.github.io/jakelen61732/ZMovies1/apk/ZMovies%20Philippines%201.6(16).apk');">
-            <i class="fa fa-download"></i>Download</button>
-        <div class="bottom-div">
-            <p><a href="https://web.facebook.com/KJAYDevelopers">©2024 KJAYDev</a></p>
+        <div class="top">
+            <img src="top_free_1334.jpg" alt="">
+        </div>
+        <div class="swiper-container middle">
+            <!-- Image list container -->
+            <div class="swiper-wrapper">
+                <img class="swiper-slide" src="banner1.jpg">
+                <img class="swiper-slide" src="banner2.jpg">
+                <img class="swiper-slide" src="banner3.jpg">
+                <img class="swiper-slide" src="banner4.jpg">
+                <img class="swiper-slide" src="banner5.jpg">
+            </div>
+        </div>
+        <div class="bottom">
+            <img src="bottom_1334.jpg" alt="">
         </div>
     </div>
+    <script src="swiper.min.js"></script>
+    <script src="jquery-1.4.1.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            autoplay: {
+                disableOnInteraction: false, // After user operation, automatic switching will not stop
+            }, // Autoplay
+            loop: true, // Loop,
+        });
+
+        $(document).ready(function () {
+            let height = document.body.offsetHeight
+            if (height > 800) {
+                $("#img-bottom").attr('src', 'bottom_1628.jpg');
+            }
+        });
+
+        $(".download").click(function () {
+            let params = GetRequest();
+            let invited_by = params.invited_by ?? '';
+            let vod_id = params.vod_id ?? '';
+            let invite_id = '';
+            if (invited_by) {
+                invite_id = '#invited#' + invited_by + '#@#'
+                copyText(invite_id)
+            }
+            if (vod_id) {
+                invite_id = '#invited#' + vod_id + '#@#'
+                copyText(invite_id)
+            }
+            location.href = 'https://zmovies-api.kjaydev.xyz/download/ZMovies.apk';
+        });
+        const copyText = (text) => {
+            // Numbers do not have .length and cannot be used to execute selectText. They need to be converted to strings.
+            const textString = text.toString();
+            let input = document.querySelector('#copy-input');
+            if (!input) {
+                input = document.createElement('input');
+                input.id = "copy-input";
+                input.readOnly = "readOnly";        // Prevent iOS focus from triggering keyboard events
+                input.style.position = "absolute";
+                input.style.left = "-1000px";
+                input.style.zIndex = "-1000";
+                document.body.appendChild(input)
+            }
+            input.value = textString;
+            // ios must select the text first and does not support input.select();
+            selectText(input, 0, textString.length);
+            if (document.execCommand('copy')) {
+                document.execCommand('copy');
+                //alert('Copied to clipboard');
+            } else {
+                console.log('Incompatible');
+            }
+            input.blur();
+            // The select() method that comes with input cannot be selected on the Apple side, so you need to write a similar method yourself
+            // Select text. createTextRange(setSelectionRange) is the input method
+            function selectText(textbox, startIndex, stopIndex) {
+                if (textbox.createTextRange) {//ie
+                    const range = textbox.createTextRange();
+                    range.collapse(true);
+                    range.moveStart('character', startIndex);//Start cursor
+                    range.moveEnd('character', stopIndex - startIndex);//End cursor
+                    range.select();//Not compatible with Apple
+                } else {//firefox/chrome
+                    textbox.setSelectionRange(startIndex, stopIndex);
+                    textbox.focus();
+                }
+            }
+        };
+
+
+        function GetRequest() {
+            var url = location.search; //Get the string after the "?" character in the URL
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+        function sleep(time) {
+            var timeStamp = new Date().getTime();
+            var endTime = timeStamp + time;
+            while (true) {
+                if (new Date().getTime() > endTime) {
+                    return;
+                }
+            }
+        }
+    </script>
 </body>
-<script>
-    function download(url) {
-        window.location.href = url;
-    }
-</script>
 
 </html>
