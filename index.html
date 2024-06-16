@@ -1,58 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>m3u8 Media Channels</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Channel Extractor</title>
 </head>
 <body>
+  <div id="channels-container"></div>
 
-<div id="media-container"></div> <!-- Container to hold the media channels -->
-
-<script>
-    async function fetchM3U8(url) {
-        try {
-            const response = await fetch(url);
-            return await response.text();
-        } catch (error) {
-            console.error('Error fetching m3u8 file:', error);
-        }
-    }
-
-    function parseM3U8(m3u8Content) {
-        const lines = m3u8Content.split('\n').filter(line => line && !line.startsWith('#'));
-        return lines;
-    }
-
-    function addChannelsToPage(mediaUrls) {
-        const container = document.getElementById('media-container');
-
-        mediaUrls.forEach((url, index) => {
-            const videoElement = document.createElement('video');
-            videoElement.controls = true;
-            videoElement.src = url;
-            videoElement.width = 400;
-            
-            const label = document.createElement('p');
-            label.textContent = `Channel ${index + 1}`;
-
-            const wrapper = document.createElement('div');
-            wrapper.appendChild(label);
-            wrapper.appendChild(videoElement);
-
-            container.appendChild(wrapper);
-        });
-    }
-
-    (async function() {
-        const m3u8Url = 'https://i.mjh.nz/SamsungTVPlus/us.m3u8'; // replace with the URL of the m3u8 file
-        const m3u8Content = await fetchM3U8(m3u8Url);
-        if (m3u8Content) {
-            const mediaUrls = parseM3U8(m3u8Content);
-            addChannelsToPage(mediaUrls);
-        }
-    })();
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
