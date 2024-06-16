@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
           // Example extract for an image or title from EXTINF if exists
           const info = line.split(',');
           const imageUrl = info[0].split(" ");
-          currentImageUrl = info[1];
+          image = info[1];
           if (info[0].contains("tvg-logo")) {
             image = imageUrl[3].substring('tvg-logo=\"'.length()).replace('\"','');
           }
@@ -33,7 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const channelElement = document.createElement('div');
         const imageElement = document.createElement('img');
         const linkElement = document.createElement('a');
+        const titleElement = document.createElement('a');
 
+        if (channel.title) {
+          imageElement.src = channel.title;
+          channelElement.appendChild(titleElement);
+        }
         if (channel.image) {
           imageElement.src = channel.image;
           channelElement.appendChild(imageElement);
