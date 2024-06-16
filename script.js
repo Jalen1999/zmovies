@@ -16,13 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
           // Example extract for an image or title from EXTINF if exists
           const info = line.split(',');
           const imageUrl = info[0].split(" ");
-          const title = info[1];
-          if (imageUrlMatch) {
-            currentImageUrl = title;
-          }
+          currentImageUrl = info[1];
           if (info[0].contains("tvg-logo")) {
-            const logo = imageUrl.substring('tvg-logo=\"'.length()).replace('\"','');
-            image = logo;
+            image = imageUrl[3].substring('tvg-logo=\"'.length()).replace('\"','');
           }
         } else if (line.startsWith('http') || line.endsWith('.m3u8')) {
           // Assume line containing HTTP URL has the media URL
