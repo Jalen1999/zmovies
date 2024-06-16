@@ -8,17 +8,25 @@ document.addEventListener("DOMContentLoaded", () => {
       // Parse .m3u8 file content
       const lines = data.split('\n');
       const mediaUrls = [];
-      let currentImageUrl = '';
-
+      let image = '';
+      let title = '';
+      
       lines.forEach(line => {
         if (line.startsWith('#EXTINF')) {
           // Example extract for an image or title from EXTINF if exists
           const info = line.split(',');
-          const imageUrlMatch = info[1].match(/tvg-logo="(.*?)"/);
-          if (imageUrlMatch) currentImageUrl = imageUrlMatch[1];
+          const imageUrl = info[0].split(" ");
+          const title = info[1];
+          if (imageUrlMatch) {
+            currentImageUrl = title;
+          }
+          if (info[0].contains("tvg-logo")) {
+            const logo = imageUrl.substring('tvg-logo=\"'.length()).replace('\"','');
+            image = logo;
+          }
         } else if (line.startsWith('http') || line.endsWith('.m3u8')) {
           // Assume line containing HTTP URL has the media URL
-          mediaUrls.push({ url: line.trim(), image: currentImageUrl });
+          mediaUrls.push({ url: line.trim(), image: image.trim() title: title.trim()});
           currentImageUrl = ''; // Reset after each media URL
         }
       });
