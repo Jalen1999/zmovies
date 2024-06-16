@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const titleElement = document.createElement('a');
 
         if (channel.title) {
-          imageElement.src = channel.title;
+          titleElement.textContent = channel.title;
           channelElement.appendChild(titleElement);
         }
         if (channel.image) {
