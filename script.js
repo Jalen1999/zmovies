@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         } else if (line.startsWith('http') || line.endsWith('.m3u8')) {
           // Assume line containing HTTP URL has the media URL
-          mediaUrls.push({ url: line.trim(), image: image.trim() title: title.trim()});
+          mediaUrls.push({ url: line.trim(), image: image.trim(), title: title.trim()});
           image = ''; // Reset after each media URL
           title = '';
         }
