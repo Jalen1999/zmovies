@@ -19,12 +19,12 @@ Request For Movie
 
 Embed Link
 ```
-https://jalen1999.github.io/tmdb/movie/{MOVIE_ID}
+https://jalen1999.github.io/zmovies/tmdb/movie/{MOVIE_ID}
 ```
 
 Embed Code
 ```
-<iframe width="100%" height="100%" src="https://jalen1999.github.io/tmdb/movie/1205036" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+<iframe width="100%" height="100%" src="https://jalen1999.github.io/zmovies/tmdb/movie/1205036" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
 ```
 
 Request For TV Show
@@ -34,12 +34,12 @@ Request For TV Show
 
 Embed Link
 ```
-https://jalen1999.github.io/tmdb/tv/{TVSHOW_ID}s{SEASON_NUMBER}e{EPISODE_NUMBER}
+https://jalen1999.github.io/zmovies/tmdb/tv/{TVSHOW_ID}s{SEASON_NUMBER}e{EPISODE_NUMBER}
 ```
 
 Embed Code
 ```
-<iframe width="100%" height="100%" src="https://jalen1999.github.io/tmdb/tv/234785s1e1" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+<iframe width="100%" height="100%" src="https://jalen1999.github.io/zmovies/tmdb/tv/234785s1e1" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
 ```
 
 YouTube API Embed For Trailer
@@ -47,7 +47,7 @@ YouTube API Embed For Trailer
 
 Embed Link
 ```
-https://jalen1999.github.io/youtube?videoid={YT_VIDEO_ID}
+https://jalen1999.github.io/zmovies/youtube?videoid={YT_VIDEO_ID}
 ```
 
 Download
