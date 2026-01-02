@@ -53,7 +53,7 @@ https://jalen1999.github.io/zmovies/youtube?videoid={YT_VIDEO_ID}
 Download
 -------------
 
-[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="75">](https://ph.000.pe/kc-film-pro.php)
+[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="75">](https://zmovies.infy.uk)
 
 
 Please Donate to support me and my work!
